@@ -15,6 +15,7 @@ set ignorecase                  " ignore case when searching
 set smartcase                   " ignore case if search pattern is all lowercase, case-sensitive otherwise
 set hlsearch                    " highlight search terms!
 set incsearch                   " show search matches as you type
+set colorcolumn=120
 
 " When searching, will wrap from bottom of buffer to top when 'nexting'
 set wrapscan
@@ -82,7 +83,7 @@ autocmd vimenter * NERDTree
 autocmd vimenter * if !argc() | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 map <c-n> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
 
 " ack : cmd+shift+F
 nmap <c-f> :Ack<space>
-
