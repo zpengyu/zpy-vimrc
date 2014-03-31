@@ -37,3 +37,15 @@
 [submodule "bundle/angular.vim"]
 	path = bundle/angular.vim
 	url = git@github.com:sindrenm/angular.vim.git
+[submodule "bundle/vim-coffee-script"]
+	path = bundle/vim-coffee-script
+	url = git@github.com:kchmck/vim-coffee-script.git
+[submodule "bundle/vim-slim"]
+	path = bundle/vim-slim
+	url = git@github.com:slim-template/vim-slim.git
+[submodule "bundle/vim-indent-guides"]
+	path = bundle/vim-indent-guides
+	url = git://github.com/nathanaelkane/vim-indent-guides.git
+[submodule "bundle/indentLine"]
+	path = bundle/indentLine
+	url = git@github.com:Yggdroot/indentLine.git
