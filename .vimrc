@@ -16,6 +16,7 @@ set smartcase                   " ignore case if search pattern is all lowercase
 set hlsearch                    " highlight search terms!
 set incsearch                   " show search matches as you type
 set colorcolumn=120
+set transparency=9
 
 " When searching, will wrap from bottom of buffer to top when 'nexting'
 set wrapscan
@@ -70,8 +71,9 @@ highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+\%#\@<!$/
 
 " Show syntastic errors in location-list
-let g:syntastic_auto_loc_list=1
-let g:syntastic_auto_loc_list_height=3
+" let g:syntastic_auto_loc_list=1
+" let g:syntastic_auto_loc_list_height=3
+" let g:syntastic_mode_map={ 'mode': 'active', 'active_filetypes': [], 'passive_filetypes': ['html'] }
 
 " Load up ctrl-p
 set runtimepath^=~/.vim/bundle/ctrlp.vim
