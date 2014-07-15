@@ -52,3 +52,6 @@
 [submodule "bundle/dash"]
 	path = bundle/dash
 	url = https://github.com/rizzatti/dash.vim.git
+[submodule "bundle/vim-angular"]
+	path = bundle/vim-angular
+	url = git@github.com:burnettk/vim-angular.git

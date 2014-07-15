@@ -16,7 +16,8 @@ set smartcase                   " ignore case if search pattern is all lowercase
 set hlsearch                    " highlight search terms!
 set incsearch                   " show search matches as you type
 set colorcolumn=120
-set transparency=9
+set transparency=3
+" set relativenumber
 
 " When searching, will wrap from bottom of buffer to top when 'nexting'
 set wrapscan
