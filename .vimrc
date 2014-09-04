@@ -62,8 +62,13 @@ unlet s:windowmapnr s:wins
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](reports|coverage|log)$',
+  \ 'file': '\v\.(so|swp)$',
+  \ }
+
 " Files to ignore for Command-T / other listings
-set wildignore+=*.o,*.obj,.git,public/stylesheets/**,public/cache/**,tmp/**
+set wildignore+=*.o,*.obj,.git,public/stylesheets/**,public/cache/**,tmp/**,log/**,spec/reports/**,coverage/**,vendor/**
 
 " Show whitespace
 set list listchars=tab:»·,trail:·
