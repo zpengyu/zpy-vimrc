@@ -16,7 +16,7 @@ set smartcase                   " ignore case if search pattern is all lowercase
 set hlsearch                    " highlight search terms!
 set incsearch                   " show search matches as you type
 set colorcolumn=120
-set transparency=3
+" set transparency=3
 " set relativenumber
 
 " When searching, will wrap from bottom of buffer to top when 'nexting'
@@ -44,8 +44,7 @@ filetype indent on
 
 syntax enable
 set background=dark
-colorscheme codeschool
-" colorscheme coffee
+colorscheme molokai
 
 " Meta+1-0 jumps to tab 1-10, Shift+Meta+1-0 jumps to tab 11-20:
 let s:windowmapnr = 0
