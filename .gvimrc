@@ -44,7 +44,7 @@ filetype indent on
 
 syntax enable
 set background=dark
-colorscheme molokai
+colorscheme codeschool
 
 " Meta+1-0 jumps to tab 1-10, Shift+Meta+1-0 jumps to tab 11-20:
 let s:windowmapnr = 0
@@ -87,7 +87,7 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 call pathogen#infect()
 
 " nerdtree
-" autocmd vimenter * NERDTree
+autocmd vimenter * NERDTree
 autocmd vimenter * if !argc() | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 map <c-n> :NERDTreeToggle<CR>

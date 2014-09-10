@@ -55,3 +55,6 @@
 [submodule "bundle/vim-angular"]
 	path = bundle/vim-angular
 	url = git@github.com:burnettk/vim-angular.git
+[submodule "bundle/solarized"]
+	path = bundle/solarized
+	url = https://github.com/altercation/vim-colors-solarized
