@@ -44,7 +44,7 @@ filetype indent on
 
 syntax enable
 set background=dark
-colorscheme codeschool
+colorscheme solarized
 
 " Meta+1-0 jumps to tab 1-10, Shift+Meta+1-0 jumps to tab 11-20:
 let s:windowmapnr = 0
