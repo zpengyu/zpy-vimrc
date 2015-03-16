@@ -16,6 +16,7 @@ set smartcase                   " ignore case if search pattern is all lowercase
 set hlsearch                    " highlight search terms!
 set incsearch                   " show search matches as you type
 set colorcolumn=120
+set cursorline cursorcolumn
 " set transparency=3
 " set relativenumber
 
@@ -92,6 +93,7 @@ autocmd vimenter * if !argc() | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 map <c-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
+let NERDTreeIgnore=['\.o$', '\~$', '\.DS_Store']
 
 " ack : cmd+shift+F
 nmap <c-f> :Ack<space>
