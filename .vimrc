@@ -3,25 +3,25 @@ set nocompatible  " We don't want vi compatibility.
 " mapleader
 let mapleader = ","
 
-set hidden
-set nowrap
-set backspace=indent,eol,start  " allow backspacing over everything in insert mode
 set autoindent                  " always set autoindenting on
-set copyindent
-set shiftwidth=2                " number of spaces for autoindenting
-set shiftround                  " nuse multiple of siftwidth when indenting with '<' and ':
-set showmatch                   " show matching parens
-set ignorecase                  " ignore case when searching
-set smartcase                   " ignore case if search pattern is all lowercase, case-sensitive otherwise
-set hlsearch                    " highlight search terms!
-set incsearch                   " show search matches as you type
+set backspace=indent,eol,start  " allow backspacing over everything in insert mode
 set colorcolumn=120
+set copyindent
 set cursorline cursorcolumn
-" set transparency=3
-" set relativenumber
+set hidden
+set hlsearch                    " highlight search terms!
+set ignorecase                  " ignore case when searching
+set incsearch                   " show search matches as you type
+set nowrap
+set relativenumber
+set shiftround                  " nuse multiple of siftwidth when indenting with '<' and ':
+set shiftwidth=2                " number of spaces for autoindenting
+set showmatch                   " show matching parens
+set smartcase                   " ignore case if search pattern is all lowercase, case-sensitive otherwise
 
-" When searching, will wrap from bottom of buffer to top when 'nexting'
-set wrapscan
+" set transparency=3
+
+set wrapscan " When searching, will wrap from bottom of buffer to top when 'nexting'
 
 " Use spaces instead of the actual tab char
 set expandtab
