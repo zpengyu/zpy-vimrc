@@ -57,16 +57,12 @@ while (s:windowmapnr < strlen(s:wins))
 endwhile
 unlet s:windowmapnr s:wins
 
+"ctrl-p
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](reports|coverage|log)$',
-  \ 'file': '\v\.(so|swp)$',
-  \ }
-
-" Files to ignore for Command-T / other listings
-set wildignore+=*.o,*.obj,.git,public/stylesheets/**,public/cache/**,tmp/**,log/**,spec/reports/**,coverage/**,vendor/**
+let g:ctrlp_max_depth=40
+"let g:ctrlp_custom_ignore = { 'dir': '\v[\/](reports|coverage|log)$', 'file': '\v\.(so|swp)$' }
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " Show whitespace
 set list listchars=tab:»·,trail:·
@@ -79,8 +75,6 @@ match ExtraWhitespace /\s\+\%#\@<!$/
 " let g:syntastic_auto_loc_list_height=3
 " let g:syntastic_mode_map={ 'mode': 'active', 'active_filetypes': [], 'passive_filetypes': ['html'] }
 
-" Load up ctrl-p
-set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " Load up pathogen / plugins
 call pathogen#infect()

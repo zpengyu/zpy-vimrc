@@ -16,8 +16,8 @@ set smartcase                   " ignore case if search pattern is all lowercase
 set hlsearch                    " highlight search terms!
 set incsearch                   " show search matches as you type
 set colorcolumn=120
+set relativenumber
 " set transparency=3
-" set relativenumber
 
 " When searching, will wrap from bottom of buffer to top when 'nexting'
 set wrapscan
@@ -58,16 +58,32 @@ while (s:windowmapnr < strlen(s:wins))
 endwhile
 unlet s:windowmapnr s:wins
 
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
+" ctrl-p
+"let g:ctrlp_map = '<c-p>'
+"let g:ctrlp_cmd = 'CtrlP'
+"let g:ctrlp_max_depth=40
+"let g:ctrlp_custom_ignore = { 'dir': '\v[\/](reports|coverage|log)$', 'file': '\v\.(so|swp)$' }
+"set runtimepath^=~/.vim/bundle/ctrlp.vim
 
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/](reports|coverage|log)$',
-  \ 'file': '\v\.(so|swp)$',
-  \ }
+" Unite
+let g:unite_source_history_yank_enable = 1
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+nnoremap <leader>t :<C-u>Unite -no-split -buffer-name=files   -start-insert file_rec/async:!<cr>
+nnoremap <leader>f :<C-u>Unite -no-split -buffer-name=files   -start-insert file<cr>
+nnoremap <leader>r :<C-u>Unite -no-split -buffer-name=mru     -start-insert file_mru<cr>
+nnoremap <leader>o :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
+nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank    history/yank<cr>
+nnoremap <leader>e :<C-u>Unite -no-split -buffer-name=buffer  buffer<cr>
 
-" Files to ignore for Command-T / other listings
-set wildignore+=*.o,*.obj,.git,public/stylesheets/**,public/cache/**,tmp/**,log/**,spec/reports/**,coverage/**,vendor/**
+" Custom mappings for the unite buffer
+autocmd FileType unite call s:unite_settings()
+function! s:unite_settings()
+  " Play nice with supertab
+  let b:SuperTabDisabled=1
+  " Enable navigation with control-j and control-k in insert mode
+  imap <buffer> <C-j>   <Plug>(unite_select_next_line)
+  imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
+endfunction
 
 " Show whitespace
 set list listchars=tab:»·,trail:·
@@ -79,9 +95,6 @@ match ExtraWhitespace /\s\+\%#\@<!$/
 " let g:syntastic_auto_loc_list=1
 " let g:syntastic_auto_loc_list_height=3
 " let g:syntastic_mode_map={ 'mode': 'active', 'active_filetypes': [], 'passive_filetypes': ['html'] }
-
-" Load up ctrl-p
-set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " Load up pathogen / plugins
 call pathogen#infect()
