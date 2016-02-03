@@ -4,9 +4,6 @@
 [submodule "bundle/berdtree"]
 	path = bundle/berdtree
 	url = https://github.com/scrooloose/nerdtree
-[submodule "bundle/ack.vim"]
-	path = bundle/ack.vim
-	url = git@github.com:mileszs/ack.vim.git
 [submodule "bundle/vim-less"]
 	path = bundle/vim-less
 	url = git@github.com:groenewege/vim-less.git
