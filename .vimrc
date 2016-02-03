@@ -60,8 +60,12 @@ unlet s:windowmapnr s:wins
 "ctrl-p
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_max_depth=40
-"let g:ctrlp_custom_ignore = { 'dir': '\v[\/](reports|coverage|log)$', 'file': '\v\.(so|swp)$' }
+let g:ctrlp_working_path_mode = 'ra'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn|reports|coverage|log)$',
+  \ 'file': '\v\.(exe|so|dll|swp)$'
+  \ }
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 " Show whitespace
@@ -87,5 +91,4 @@ map <c-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\.o$', '\~$', '\.DS_Store']
 
-" ack : cmd+shift+F
-nmap <c-f> :Ack<space>
+set runtimepath^=~/.vim/bundle/ag
