@@ -34,6 +34,7 @@ set title
 set nobackup
 set noswapfile
 set pastetoggle=<F2>
+set relativenumber
 nnoremap ; :
 
 set ts=2
@@ -42,8 +43,8 @@ filetype plugin on
 filetype indent on
 
 syntax enable
-set background=dark
-colorscheme solarized
+" set background=dark
+colorscheme desert
 
 " Meta+1-0 jumps to tab 1-10, Shift+Meta+1-0 jumps to tab 11-20:
 let s:windowmapnr = 0
@@ -75,9 +76,9 @@ highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+\%#\@<!$/
 
 " Show syntastic errors in location-list
-" let g:syntastic_auto_loc_list=1
-" let g:syntastic_auto_loc_list_height=3
-" let g:syntastic_mode_map={ 'mode': 'active', 'active_filetypes': [], 'passive_filetypes': ['html'] }
+let g:syntastic_auto_loc_list=1
+let g:syntastic_auto_loc_list_height=3
+let g:syntastic_mode_map={ 'mode': 'active', 'active_filetypes': [], 'passive_filetypes': ['html'] }
 
 
 " Load up pathogen / plugins
@@ -91,4 +92,4 @@ map <c-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\.o$', '\~$', '\.DS_Store']
 
-set runtimepath^=~/.vim/bundle/ag
+set runtimepath^=~/.vim/bundle/ag.vim
