@@ -34,16 +34,16 @@ set title
 set nobackup
 set noswapfile
 set pastetoggle=<F2>
+set relativenumber
 nnoremap ; :
 
-set ts=2 sw=2 et
+set ts=2
 filetype on  " Automatically detect file types.
 filetype plugin on
 filetype indent on
 let g:indent_guides_start_level=2
 
 syntax enable
-
 colorscheme desert
 
 " Meta+1-0 jumps to tab 1-10, Shift+Meta+1-0 jumps to tab 11-20:
@@ -58,6 +58,17 @@ while (s:windowmapnr < strlen(s:wins))
 endwhile
 unlet s:windowmapnr s:wins
 
+"ctrl-p
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn|reports|coverage|log)$',
+  \ 'file': '\v\.(exe|so|dll|swp)$'
+  \ }
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+
 " Show whitespace
 set list listchars=tab:»·,trail:·
 " Highlight trailing/leading whitespace
@@ -69,12 +80,16 @@ let g:syntastic_auto_loc_list=1
 let g:syntastic_auto_loc_list_height=3
 let g:syntastic_mode_map={ 'mode': 'active', 'active_filetypes': [], 'passive_filetypes': ['html'] }
 
+
 " Load up pathogen / plugins
 call pathogen#infect()
 
 " nerdtree
-autocmd vimenter * NERDTree
+" autocmd vimenter * NERDTree
 autocmd vimenter * if !argc() | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 map <c-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
+let NERDTreeIgnore=['\.o$', '\~$', '\.DS_Store']
+
+set runtimepath^=~/.vim/bundle/ag.vim

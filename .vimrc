@@ -41,14 +41,10 @@ set ts=2
 filetype on  " Automatically detect file types.
 filetype plugin on
 filetype indent on
+let g:indent_guides_start_level=2
 
 syntax enable
-" set background=dark
 colorscheme desert
-
-" indentLine
-let g:indentLine_color_term = 239
-let g:indentLine_enabled=0
 
 " Meta+1-0 jumps to tab 1-10, Shift+Meta+1-0 jumps to tab 11-20:
 let s:windowmapnr = 0
