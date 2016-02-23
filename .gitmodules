@@ -58,9 +58,6 @@
 [submodule "bundle/vim-elixir"]
 	path = bundle/vim-elixir
 	url = git@github.com:elixir-lang/vim-elixir.git
-[submodule "bundle/unite.vim"]
-	path = bundle/unite.vim
-	url = git@github.com:Shougo/unite.vim.git
 [submodule "bundle/ag.vim"]
 	path = bundle/ag.vim
 	url = git@github.com:rking/ag.vim.git

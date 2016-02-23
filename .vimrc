@@ -44,7 +44,7 @@ filetype indent on
 let g:indent_guides_start_level=2
 
 syntax enable
-colorscheme desert
+colorscheme bclear
 
 " Meta+1-0 jumps to tab 1-10, Shift+Meta+1-0 jumps to tab 11-20:
 let s:windowmapnr = 0
@@ -85,7 +85,7 @@ let g:syntastic_mode_map={ 'mode': 'active', 'active_filetypes': [], 'passive_fi
 call pathogen#infect()
 
 " nerdtree
-" autocmd vimenter * NERDTree
+autocmd vimenter * NERDTree
 autocmd vimenter * if !argc() | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 map <c-n> :NERDTreeToggle<CR>
@@ -93,3 +93,6 @@ let NERDTreeShowHidden=1
 let NERDTreeIgnore=['\.o$', '\~$', '\.DS_Store']
 
 set runtimepath^=~/.vim/bundle/ag.vim
+
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
