@@ -17,7 +17,6 @@ set hlsearch                    " highlight search terms!
 set incsearch                   " show search matches as you type
 set colorcolumn=120
 set relativenumber
-" set transparency=3
 
 " When searching, will wrap from bottom of buffer to top when 'nexting'
 set wrapscan
@@ -37,14 +36,15 @@ set noswapfile
 set pastetoggle=<F2>
 nnoremap ; :
 
-set ts=2
+set ts=2 sw=2 et
 filetype on  " Automatically detect file types.
 filetype plugin on
 filetype indent on
+let g:indent_guides_start_level=2
 
 syntax enable
-set background=dark
-colorscheme solarized
+
+colorscheme desert
 
 " Meta+1-0 jumps to tab 1-10, Shift+Meta+1-0 jumps to tab 11-20:
 let s:windowmapnr = 0
@@ -58,33 +58,6 @@ while (s:windowmapnr < strlen(s:wins))
 endwhile
 unlet s:windowmapnr s:wins
 
-" ctrl-p
-"let g:ctrlp_map = '<c-p>'
-"let g:ctrlp_cmd = 'CtrlP'
-"let g:ctrlp_max_depth=40
-"let g:ctrlp_custom_ignore = { 'dir': '\v[\/](reports|coverage|log)$', 'file': '\v\.(so|swp)$' }
-"set runtimepath^=~/.vim/bundle/ctrlp.vim
-
-" Unite
-let g:unite_source_history_yank_enable = 1
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-nnoremap <leader>t :<C-u>Unite -no-split -buffer-name=files   -start-insert file_rec/async:!<cr>
-nnoremap <leader>f :<C-u>Unite -no-split -buffer-name=files   -start-insert file<cr>
-nnoremap <leader>r :<C-u>Unite -no-split -buffer-name=mru     -start-insert file_mru<cr>
-nnoremap <leader>o :<C-u>Unite -no-split -buffer-name=outline -start-insert outline<cr>
-nnoremap <leader>y :<C-u>Unite -no-split -buffer-name=yank    history/yank<cr>
-nnoremap <leader>e :<C-u>Unite -no-split -buffer-name=buffer  buffer<cr>
-
-" Custom mappings for the unite buffer
-autocmd FileType unite call s:unite_settings()
-function! s:unite_settings()
-  " Play nice with supertab
-  let b:SuperTabDisabled=1
-  " Enable navigation with control-j and control-k in insert mode
-  imap <buffer> <C-j>   <Plug>(unite_select_next_line)
-  imap <buffer> <C-k>   <Plug>(unite_select_previous_line)
-endfunction
-
 " Show whitespace
 set list listchars=tab:»·,trail:·
 " Highlight trailing/leading whitespace
@@ -92,9 +65,9 @@ highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+\%#\@<!$/
 
 " Show syntastic errors in location-list
-" let g:syntastic_auto_loc_list=1
-" let g:syntastic_auto_loc_list_height=3
-" let g:syntastic_mode_map={ 'mode': 'active', 'active_filetypes': [], 'passive_filetypes': ['html'] }
+let g:syntastic_auto_loc_list=1
+let g:syntastic_auto_loc_list_height=3
+let g:syntastic_mode_map={ 'mode': 'active', 'active_filetypes': [], 'passive_filetypes': ['html'] }
 
 " Load up pathogen / plugins
 call pathogen#infect()
@@ -105,6 +78,3 @@ autocmd vimenter * if !argc() | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 map <c-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
-
-" ack : cmd+shift+F
-nmap <c-f> :Ack<space>

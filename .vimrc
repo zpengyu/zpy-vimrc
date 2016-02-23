@@ -46,6 +46,10 @@ syntax enable
 " set background=dark
 colorscheme desert
 
+" indentLine
+let g:indentLine_color_term = 239
+let g:indentLine_enabled=0
+
 " Meta+1-0 jumps to tab 1-10, Shift+Meta+1-0 jumps to tab 11-20:
 let s:windowmapnr = 0
 let s:wins='1234567890!@#$%^&*()'
