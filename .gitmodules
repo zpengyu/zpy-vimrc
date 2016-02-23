@@ -34,12 +34,6 @@
 [submodule "bundle/vim-slim"]
 	path = bundle/vim-slim
 	url = git@github.com:slim-template/vim-slim.git
-[submodule "bundle/vim-indent-guides"]
-	path = bundle/vim-indent-guides
-	url = git://github.com/nathanaelkane/vim-indent-guides.git
-[submodule "bundle/indentLine"]
-	path = bundle/indentLine
-	url = git@github.com:Yggdroot/indentLine.git
 [submodule "bundle/funcoo"]
 	path = bundle/funcoo
 	url = https://github.com/rizzatti/funcoo.vim.git
