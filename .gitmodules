@@ -64,3 +64,15 @@
 [submodule "bundle/vim-indent-guides"]
 	path = bundle/vim-indent-guides
 	url = git@github.com:nathanaelkane/vim-indent-guides.git
+[submodule "bundle/vim-gradle"]
+	path = bundle/vim-gradle
+	url = git@github.com:tfnico/vim-gradle.git
+[submodule "bundle/vim-jsx"]
+	path = bundle/vim-jsx
+	url = https://github.com/mxw/vim-jsx.git
+[submodule "bundle/vim-es6"]
+	path = bundle/vim-es6
+	url = https://github.com/isRuslan/vim-es6.git
+[submodule "bundle/python-mode"]
+	path = bundle/python-mode
+	url = git@github.com:python-mode/python-mode.git

@@ -2,6 +2,7 @@ set nocompatible  " We don't want vi compatibility.
 
 " mapleader
 let mapleader = ","
+let &t_Co=256
 
 set hidden
 set nowrap
@@ -44,7 +45,8 @@ filetype indent on
 let g:indent_guides_start_level=2
 
 syntax enable
-colorscheme bclear
+colorscheme desert
+set background=dark
 
 " Meta+1-0 jumps to tab 1-10, Shift+Meta+1-0 jumps to tab 11-20:
 let s:windowmapnr = 0
